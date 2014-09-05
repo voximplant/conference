@@ -1,0 +1,177 @@
+.btn span.glyphicon+span, .btn span+span.glyphicon,
+.btn span.glyphicon-regular+span, .btn span+span.glyphicon-regular {
+	margin-left: 10px;
+}
+
+#addParticipant, #scheduleButton {
+  margin-left: 10px;
+}
+
+#autoCall {
+  line-height: normal;
+}
+
+label.checkbox.inline {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#conferenceControls {
+  margin-top: 20px;
+}
+
+.control-label-ex {
+  text-align: right;
+}
+
+#sendNotifications {
+  float: none;
+}
+
+#webAccessInput {
+  width: 225px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+h3.status-title {
+	text-transform: capitalize;
+}
+.progress-bar {
+	width: 100%;			
+}
+
+span.buttontext.line1 {
+  font-weight: bold;
+}
+
+span.buttontext.line2 {
+  font-size: 60%;
+}
+
+.btn-group-justified>.btn-group .modal-footer .btn {
+  width: auto;
+}
+
+div.conference-user {
+  background: #eee;
+  border: 0;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  line-height: 215px;
+}
+
+div.conference-user.add-user {
+  background: none;
+  border: solid 2px #aaa;
+  line-height: 205px;
+}
+
+div.conference-user-wrapper.add-user.hover div.conference-user.add-user {
+  border-color: #5cb85c;
+}
+
+div.conference-user-wrapper {
+  float: left;
+  width: 140px;
+  height: 140px;
+  margin: 30px;
+}
+
+div.conference-user-wrapper.add-user {
+  cursor: pointer;
+}
+
+div.conference-user-wrapper.progressing div.conference-user {
+  border: solid 2px #fff;
+  -webkit-animation: wblink 0.5s; /* Chrome, Safari, Opera */
+  animation: wblink 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+div.conference-user-wrapper.connected div.conference-user {
+  border: solid 2px #5cb85c;
+}
+
+div.conference-user-wrapper.disconnected div.conference-user,
+div.conference-user-wrapper.failed div.conference-user {
+  border: solid 2px #d9534f;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes wblink {
+    0% {border-color: #fff;}
+    50% {border-color: #f0ad4e;}
+    100% {border-color: #fff;}
+}
+
+/* Standard syntax */
+@keyframes wblink {
+    0% {border-color: #fff;}
+    50% {border-color: #f0ad4e;}
+    100% {border-color: #fff;}
+}
+
+
+div.conference-user-wrapper+div.conference-user-wrapper {
+  margin-left: 20px;
+}
+
+div.conference-user span {
+  color: #aaa;
+  font-size: 100px;
+}
+
+div.conference-user.add-user span {
+  font-size: 80px;
+}
+
+div.conference-user-wrapper.add-user.hover div.conference-user.add-user span {
+  color: #5cb85c;
+}
+
+div.participant-name {
+  text-align: center;
+}
+
+div.well.well-sm.participant-controls {
+  position: relative;
+  margin-top: -30px; 
+  margin-bottom: 0px;
+  padding: 3px;
+}
