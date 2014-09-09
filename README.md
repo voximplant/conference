@@ -10,7 +10,7 @@ Quickstart
 ### Webservice Installation
 Use `voximplant.sql` from DB_schema to create database structure, in addition to the structure there will be one user admin/admin created in the managers table. 
 
-Upload files from Webservice folder on your web server (with PHP support) and change database connection settings in `shim.php` file.
+Upload files from Webservice folder on your web server (with PHP support) and change database connection settings in `shim.php` file:
 
     // MySQL DB connection configuration
     `$config = array();
@@ -18,6 +18,16 @@ Upload files from Webservice folder on your web server (with PHP support) and ch
     $config["database"]  = "voxconf";
     $config["username"]  = "root";
     $config["password"]  = "";
+    
+And specify your VoxImplant API access settings (you can get this info at https://manage.voximplant.com/#apiaccess and rule id will be generated automatically later - see VoxImplant Setup):
+
+    /**
+    *   VoxImplant HTTP API access settings
+    */
+    define("API_URL", "https://api.voximplant.com/platform_api/");
+    define("API_KEY", "YOUR VOXIMPLANT API_KEY");
+    define("ACCOUNT_NAME", "YOUR VOXIMPLANT ACCOUNT_NAME");
+    define("RULE_ID", "YOUR APPLICATION RULE_ID"); // Rule which starts conference via HTTP request
 
 You can also specify your SMTP server info in **sendEmail** function if you plan to send email notifications with conference access info to participants and uncomment this string to enable this functionality:
 
