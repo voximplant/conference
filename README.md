@@ -3,7 +3,7 @@ Audio conferencing service
 
 ![Conference Manager Interface](http://habrastorage.org/files/71e/3e7/25a/71e3e725a3b94a0781118b712c0892d1.png "Conference Manager")
 
-This project contains [VoxEngine] scenarios, webservice (PHP), DB schema (MySQL) and web interface for conference management. This README file describes how to use the provided files to build audio conferencing service. The only thing you need to start building your audio conferencing is VoxImplant developer account - you can get it for free at https://voximplant.com/sign-up
+This project contains the [VoxEngine] scenarios, a Web service (PHP), a DB schema (MySQL) and a Web client for conference management. This README file describes how to use the provided files to build audio conferencing service. The only thing you need to start building your audio conferencing is a Voximplant developer account - you can get it for free at https://voximplant.com/sign-up
 
 Quickstart
 ----
@@ -19,7 +19,7 @@ Upload files from Webservice folder on your web server (with PHP support) and ch
     $config["username"]  = "root";
     $config["password"]  = "";
     
-And specify your VoxImplant API access settings (you can get this info at https://manage.voximplant.com/#apiaccess and rule id will be generated automatically later - see VoxImplant Setup):
+And specify your Voximplant API access settings (you can get this info at https://manage.voximplant.com/settings/api_keys and the rule ID will be generated automatically later - see the Voximplant Setup):
 
     /**
     *   VoxImplant HTTP API access settings
@@ -41,29 +41,29 @@ Upload Manager folder on your web server (with PHP support) and change `window.W
     // SPECIFY PATH TO shim.php ON YOUR WEBSERVER
     window.WEBSERVICE_URL = "path/to/shim.php"; 
 
-### VoxImplant Setup
-After you successfully created and activated your VoxImplant developer account you need to login into VoxImplant admin interface and complete these steps to setup conferencing service:
-- Buy phone number in VoxImplant Control Panel at https://manage.voximplant.com/#numbers
-- Create 3 new scenarios using the files from VoxEngine folder of the project (ConferenceGatekeeper.js, StandaloneConference.js, VoxConference.js) at https://manage.voximplant.com/#scenarios , **Warning: don't forget to change WEBSERVICE_URL, BEEP_URL, MUSIC_URL to real URLs**
-- Create new VoxImplant application called `conference` at https://manage.voximplant.com/#applications, its full name will look like `conference.youraccountname.voximplant.com`
-- Specify rules for the application, they will be used to launch the scenarios using [HTTP API] or after the incoming call reaches the platform. Overall 3 rules are required:
+### Voximplant Setup
+After you successfully created and activated your Voximplant developer account you need to login to the Voximplant Control panel and complete these steps to set up the conferencing service:
+- Buy a phone number at https://manage.voximplant.com/numbers/
+- Create a Voximplant application called `conference` at https://manage.voximplant.com/#applications, its full name will look like `conference.youraccountname.voximplant.com`
+- Being within this newly created application, switch to the **Scenarios** tab and create 3 new scenarios using the files from the **VoxEngine** folder of the project (ConferenceGatekeeper.js, StandaloneConference.js, VoxConference.js). **Warning: don't forget to change WEBSERVICE_URL, BEEP_URL, MUSIC_URL to real URLs**
+- On the **Routing** tab, specify rules for the application, they will be used to launch the scenarios using [HTTP API] or after the incoming call reaches the platform. Overall, 3 rules are required:
 
-    1. Name: **IncomingCall**, Pattern: VoxImplant phone number bought in VoxImplant Control Panel (i.e. `18001231213`), Assigned scenario: ConferenceGatekeeper. It will handle incoming calls to phone number connected to the application and first part of the authorization process (access code check).
+    1. Name: **IncomingCall**, Pattern: Voximplant phone number bought in the Voximplant Control Panel (i.e. `18001231213`), Assigned scenario: ConferenceGatekeeper. It will handle incoming calls to phone number connected to the application and first part of the authorization process (access code check).
     2. Name: **FwdToConf**, Pattern: `conf`, Assigned scenarios: `VoxConference`, `StandaloneConference` (in this order)
     3. Name: **StartConfHTTP**, Pattern: `.*`, Assigned scenarious: `VoxConference`, `StandaloneConference` (in this order)
     
     
-- Connect phone number(s) your've bought before to the application at https://manage.voximplant.com/#mynumbers
+- Connect phone number(s) your've bought before to the application at https://manage.voximplant.com/numbers/
     
 ### Creating conference
-Open Manager interface in your browser and log in using admin/admin login/passowrd pair. If everything was done correctly you should see the conference settings including the dropdown list with the phone number(s) you've bought and connected to your VoxImplant conference application:
+Open Manager interface in your browser and log in using admin/admin login/passowrd pair. If everything was done correctly you should see the conference settings including the dropdown list with the phone number(s) you've bought and connected to your Voximplant conference application:
 ![Conference access settings](http://habrastorage.org/files/765/503/bb7/765503bb79d247319d6fc6f08f97162d.png "Access Settings")
 
 Version
 ----
 1.0
 
-[VoxImplant]:http://voximplant.com
-[VoxEngine]:http://voximplant.com/help/faq/what-is-voxengine/
+[Voximplant]:http://voximplant.com
+[VoxEngine]:https://voximplant.com/docs/introduction/introduction_to_voximplant/capabilities_and_components/voxengine
 [HTTP API]:http://voximplant.com/docs/references/httpapi/
-[StartScenarios]:http://voximplant.com/docs/references/httpapi/StartScenarios.html
+[StartScenarios]:https://voximplant.com/docs/references/httpapi/scenarios#startscenarios
